@@ -27,7 +27,7 @@
     --line-dark:rgba(255,255,255,.10);
     --todo:#E8932F;
     --grad:linear-gradient(118deg,#A31F34 0%,#E4002B 100%);
-    --maxw:1120px;
+    --maxw:1200px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -68,16 +68,16 @@
     background:rgba(44,7,16,.85);backdrop-filter:blur(14px);
     border-bottom:1px solid var(--line-dark);
   }
-  .nav-inner{display:flex;align-items:center;gap:18px;height:64px}
-  .brand{display:flex;align-items:center;gap:11px;color:#fff;font-weight:700;font-size:15px}
+  .nav-inner{display:flex;align-items:center;gap:18px;height:70px}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700;font-size:16px}
   .brand .mark{
-    width:34px;height:34px;border-radius:9px;background:var(--grad);
-    display:grid;place-items:center;font-family:"Space Grotesk";font-weight:700;font-size:14px;color:#fff;flex-shrink:0;
+    width:38px;height:38px;border-radius:10px;background:var(--grad);
+    display:grid;place-items:center;font-family:"Space Grotesk";font-weight:700;font-size:15px;color:#fff;flex-shrink:0;
   }
-  .brand small{display:block;font-size:10px;font-weight:400;color:var(--muted-2);letter-spacing:.04em}
+  .brand small{display:block;font-size:10.5px;font-weight:400;color:var(--muted-2);letter-spacing:.04em}
   .nav-links{display:flex;gap:4px;margin-left:auto}
   .nav-links a{
-    color:rgba(255,255,255,.72);font-size:13.5px;font-weight:500;
+    color:rgba(255,255,255,.72);font-size:14px;font-weight:500;
     padding:8px 12px;border-radius:8px;transition:.18s;
   }
   .nav-links a:hover{color:#fff;background:rgba(255,255,255,.07)}
@@ -87,13 +87,14 @@
   }
   .nav-cta:hover{filter:brightness(1.08)}
   .burger{display:none;margin-left:auto;background:none;border:0;color:#fff;font-size:24px;cursor:pointer;padding:6px}
-  @media(max-width:880px){
+  @media(max-width:980px){
     .nav-links{
-      position:fixed;inset:64px 0 auto 0;flex-direction:column;gap:2px;
+      position:fixed;inset:70px 0 auto 0;flex-direction:column;gap:2px;
       background:var(--ink);padding:14px 16px 22px;border-bottom:1px solid var(--line-dark);
-      transform:translateY(-120%);transition:transform .3s;margin-left:0;
+      transform:translateY(-8px);opacity:0;visibility:hidden;pointer-events:none;
+      transition:opacity .25s,transform .25s,visibility .25s;margin-left:0;
     }
-    .nav-links.open{transform:none}
+    .nav-links.open{transform:none;opacity:1;visibility:visible;pointer-events:auto}
     .nav-links a{padding:12px}
     .burger{display:block}
   }
@@ -113,14 +114,14 @@
   }
   .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--gold-bright);box-shadow:0 0 0 4px rgba(194,160,106,.28)}
   h1.hero-title{
-    font-size:clamp(34px,6vw,62px);font-weight:900;line-height:1.12;letter-spacing:-.01em;
+    font-size:clamp(38px,6.6vw,72px);font-weight:900;line-height:1.12;letter-spacing:-.01em;
     margin-bottom:26px;max-width:16ch;
   }
   h1.hero-title .g{
     background:linear-gradient(110deg,var(--red-bright),var(--gold-bright));
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
-  .hero-sub{font-size:clamp(15px,2vw,18px);color:rgba(255,255,255,.78);max-width:60ch;line-height:1.85;margin-bottom:34px}
+  .hero-sub{font-size:clamp(15px,2vw,19px);color:rgba(255,255,255,.78);max-width:60ch;line-height:1.9;margin-bottom:34px}
   .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:60px}
   .btn{
     display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;
@@ -158,8 +159,8 @@
   /* ---------- SECTION SHELL ---------- */
   .sec{padding:84px 0}
   .sec-head{max-width:62ch;margin-bottom:48px}
-  h2.sec-title{font-size:clamp(25px,3.4vw,38px);font-weight:900;line-height:1.28;letter-spacing:-.01em;margin-bottom:16px}
-  .sec-desc{font-size:15.5px;color:var(--muted);line-height:1.9}
+  h2.sec-title{font-size:clamp(26px,3.7vw,42px);font-weight:900;line-height:1.28;letter-spacing:-.01em;margin-bottom:16px}
+  .sec-desc{font-size:16px;color:var(--muted);line-height:1.9}
 
   /* info cards */
   .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -265,6 +266,29 @@
   .sch-row .k{color:var(--muted)}
   .sch-row .v{font-weight:700;text-align:right}
 
+  /* APPLY / 報名須知 */
+  .apply-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 32px;margin-bottom:18px}
+  .apply-h{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+  .apply-no{font-family:'Space Grotesk';font-weight:700;font-size:15px;color:#fff;background:var(--grad);
+    width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex-shrink:0}
+  .apply-h h3{font-size:19px;font-weight:800;color:var(--text)}
+  .apply-b{padding-left:2px}
+  .apply-sub{font-size:13.5px;font-weight:800;color:var(--red);letter-spacing:.02em;margin:14px 0 8px}
+  .apply-p{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:8px}
+  .apply-list{list-style:none;padding:0;margin:0}
+  .apply-list>li{position:relative;padding-left:22px;font-size:14px;color:var(--text);line-height:1.85;margin-bottom:9px}
+  .apply-list>li::before{content:"";position:absolute;left:4px;top:11px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  .apply-sublist{list-style:none;padding:8px 0 2px;margin:6px 0 0}
+  .apply-sublist>li{position:relative;padding-left:20px;font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:6px}
+  .apply-sublist>li::before{content:"–";position:absolute;left:4px;top:0;color:var(--gold)}
+  .apply-callout{margin:18px 0 6px;background:var(--ink);color:#fff;border-radius:14px;
+    padding:16px 22px;font-size:16px;font-weight:800;text-align:center}
+  .apply-note{margin-top:18px;background:var(--paper-2);border-radius:14px;padding:18px 22px}
+  .apply-note b{display:block;font-size:13.5px;color:var(--text);margin-bottom:8px}
+  .apply-note p{font-size:13px;color:var(--muted);line-height:1.9;margin-bottom:10px}
+  .apply-note p:last-child{margin-bottom:0}
+  @media(max-width:600px){.apply-card{padding:24px 20px}}
+
   /* FAQ */
   .faq-item{border-bottom:1px solid var(--line)}
   .faq-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;
@@ -338,6 +362,7 @@
       <a href="#reward">獎勵金</a>
       <a href="#project">企業專題</a>
       <a href="#schedule">開班資訊</a>
+      <a href="#apply">報名須知</a>
       <a href="#faq">常見問題</a>
       <a href="https://forms.gle/wcaH8AW1RHdHxGUQ6" target="_blank" rel="noopener" class="nav-cta">我要報名</a>
     </nav>
@@ -362,8 +387,8 @@
       <div class="hstat"><div class="v num" data-count="0">0<small style="font-family:'Noto Sans TC'"> 元</small></div><div class="l">課程全程免費</div></div>
     </div>
 
-    <div class="countdown reveal" id="countdown" data-deadline="2025-09-01T09:00:00">
-      <div class="cd-label">距離預計開課 ｜ <b class="todo" style="border-color:var(--gold-bright);color:var(--gold-bright)">開課日期</b></div>
+    <div class="countdown reveal" id="countdown" data-deadline="2026-10-15T09:00:00">
+      <div class="cd-label">距離預計開訓 ｜ <b style="color:var(--gold-bright)">2026/10/15</b></div>
       <div class="cd-grid">
         <div class="cd-cell"><div class="n" id="cd-d">--</div><div class="u">天</div></div>
         <div class="cd-cell"><div class="n" id="cd-h">--</div><div class="u">時</div></div>
@@ -477,14 +502,10 @@
         </ul>
       </div>
     </div>
-    <div class="reveal" style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px">
+    <div class="reveal" style="margin-top:16px">
       <div style="background:var(--ink-2);border:1px solid var(--line-dark);border-radius:14px;padding:18px 20px">
         <div style="font-size:12px;font-weight:700;color:var(--gold-bright);margin-bottom:8px">補助規範</div>
         <div style="font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.85">每人限參與本計畫一次；培訓補助期間不得同時接受其他政府人才培訓補助。</div>
-      </div>
-      <div style="background:var(--ink-2);border:1px solid var(--line-dark);border-radius:14px;padding:18px 20px">
-        <div style="font-size:12px;font-weight:700;color:var(--gold-bright);margin-bottom:8px">學歷背景（須符合其一）</div>
-        <div style="font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.85">畢業於與專班產業領域相關科系／修習相關輔系、學程或課程／具備相關產業工作經驗。</div>
       </div>
     </div>
   </div>
@@ -531,7 +552,7 @@
         <div class="ph"><div class="n num">120</div><div class="u">小時</div></div>
       </div>
       <div class="stage-body">
-        <div class="stage-note">以合作企業命題為核心，完成可展示的 AI 導入成果。先備條件：第一階段完訓（出席 90%、測驗 80 分以上）。評量方式：專題成果發表。<br>合作企業：小北百貨、全國電子。</div>
+        <div class="stage-note">以合作企業命題為核心，完成可展示的 AI 導入成果。先備條件：第一階段完訓（出席 90%、測驗 80 分以上）。評量方式：專題成果發表。<br>合作企業：小北百貨、全國電子、寶雅國際。</div>
         <div class="unit"><div class="uh"><span class="uhr num">18h</span></div><div class="ub"><h4>企業命題導入與痛點轉譯</h4><p>企業出題與專題實作機制說明、零售營運場景與痛點解析、命題方向與題目範例、企業痛點轉譯與問題定義方法。</p></div></div>
         <div class="unit"><div class="uh"><span class="uhr num">24h</span></div><div class="ub"><h4>問題定義與資料盤點</h4><p>題目選定、目標使用者與情境設定、零售流程決策節點盤點、POS／庫存／會員／活動／互動資料盤點、資料限制假設與預期效益。</p></div></div>
         <div class="unit"><div class="uh"><span class="uhr num">54h</span></div><div class="ub"><h4>AI 應用方案設計與工具實作</h4><p>AI 解方架構與流程設計，工具實作（ChatGPT／Copilot／Gemini／Power BI）、銷售預測與庫存補貨、AI 代理任務流程、導購助理、會員分群與消費行為洞察、雛形與展示素材製作。</p></div></div>
@@ -585,7 +606,7 @@
     </div>
     <div style="margin-top:26px;padding:22px 24px;background:var(--card);border:1px solid var(--line);border-radius:16px" class="reveal">
       <div style="font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--gold);margin-bottom:8px">合作企業與實作場域</div>
-      <p style="font-size:14px;color:var(--muted);line-height:1.85">合作企業：<b style="color:var(--text)">小北百貨</b>、<b style="color:var(--text)">全國電子</b>。學員依企業真實命題分組，在不同零售場域快速理解問題、提出可落地的 AI 解方。</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.85">合作企業：<b style="color:var(--text)">小北百貨</b>、<b style="color:var(--text)">全國電子</b>、<b style="color:var(--text)">寶雅國際</b>。學員依企業真實命題分組，在不同零售場域快速理解問題、提出可落地的 AI 解方。</p>
     </div>
   </div>
 </section>
@@ -603,8 +624,8 @@
         <h3>招生資訊</h3>
         <div class="sch-row"><span class="k">招生名額</span><span class="v">共 33 名（須經面試篩選）</span></div>
         <div class="sch-row"><span class="k">招生梯次</span><span class="v">共兩梯次（分 1、2 班開課）</span></div>
-        <div class="sch-row"><span class="k">招生日期</span><span class="v"><span class="todo">起訖日期</span></span></div>
-        <div class="sch-row"><span class="k">開訓日期</span><span class="v"><span class="todo">開訓日期</span></span></div>
+        <div class="sch-row"><span class="k">招生日期</span><span class="v">2026/09/01～2026/09/30</span></div>
+        <div class="sch-row"><span class="k">開訓日期</span><span class="v">2026/10/15</span></div>
         <div class="sch-row"><span class="k">培訓期間</span><span class="v">共計兩個月</span></div>
         <div class="sch-row"><span class="k">上課地點</span><span class="v">國立成功大學（教室另行公告）</span></div>
       </div>
@@ -621,17 +642,106 @@
     <div class="sch-grid">
       <div class="sch-card reveal">
         <h3>AI 智慧營運實戰養成 1 班</h3>
-        <div class="sch-row"><span class="k">上課期間</span><span class="v"><span class="todo">起訖日期</span></span></div>
-        <div class="sch-row"><span class="k">開訓日期</span><span class="v"><span class="todo">開訓日期</span></span></div>
-        <div class="sch-row"><span class="k">培訓人數</span><span class="v"><span class="todo">人數</span></span></div>
+        <div class="sch-row"><span class="k">上課期間</span><span class="v">自 2026/10/15 起，共兩個月</span></div>
+        <div class="sch-row"><span class="k">開訓日期</span><span class="v">2026/10/15</span></div>
+        <div class="sch-row"><span class="k">培訓人數</span><span class="v">33 名</span></div>
         <div class="sch-row"><span class="k">應用次產業</span><span class="v">零售業</span></div>
       </div>
       <div class="sch-card reveal">
         <h3>AI 智慧營運實戰養成 2 班</h3>
-        <div class="sch-row"><span class="k">上課期間</span><span class="v"><span class="todo">起訖日期</span></span></div>
-        <div class="sch-row"><span class="k">開訓日期</span><span class="v"><span class="todo">開訓日期</span></span></div>
-        <div class="sch-row"><span class="k">培訓人數</span><span class="v"><span class="todo">人數</span></span></div>
+        <div class="sch-row"><span class="k">上課期間</span><span class="v">待定</span></div>
+        <div class="sch-row"><span class="k">開訓日期</span><span class="v">待定</span></div>
+        <div class="sch-row"><span class="k">培訓人數</span><span class="v">待定</span></div>
         <div class="sch-row"><span class="k">應用次產業</span><span class="v">零售業</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPLY / 報名須知 ============ -->
+<section class="sec" id="apply">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">How to Apply</div>
+      <h2 class="sec-title">報名方式與相關規定。</h2>
+      <p class="sec-desc">請於報名前詳閱以下報名方式、獎勵金說明與請假、退訓等相關規定。完整資訊請見 <a href="https://serv.gcis.nat.gov.tw/AOCAI/courses/youth" target="_blank" rel="noopener" style="color:var(--red);font-weight:600">本計畫網站</a>。</p>
+    </div>
+
+    <!-- 報名方式 -->
+    <div class="apply-card reveal">
+      <div class="apply-h"><span class="apply-no">01</span><h3>報名方式</h3></div>
+      <div class="apply-b">
+        <div class="apply-sub">線上申請</div>
+        <ul class="apply-list">
+          <li>採線上申請，請於本網頁完成線上報名。</li>
+          <li>填寫「培訓學員申請表」、「個資同意書」（如附件），並回傳以下文件：
+            <ul class="apply-sublist">
+              <li>身分證正反面影本</li>
+              <li>最高學歷畢業證書影本（應屆畢業生請提供在學證明，並於培訓完成後 6 個月內補交畢業證書影本）</li>
+              <li>最高學歷學校成績單影本</li>
+              <li>如有工作經驗者，另檢附勞工保險異動紀錄（可至勞保局 e 化服務系統下載）；如加保於職業工會、農會或漁會，請於申請表中切結相關事項。</li>
+            </ul>
+          </li>
+          <li>依培訓單位規定甄選，通過後以 Email 通知。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 結訓、認證與學習獎勵金 -->
+    <div class="apply-card reveal">
+      <div class="apply-h"><span class="apply-no">02</span><h3>結訓、認證與學習獎勵金說明</h3></div>
+      <div class="apply-b">
+        <div class="apply-sub">第一階段（次產業 AI 應用課程）結業標準</div>
+        <ul class="apply-list">
+          <li>訓練課程出席時數達該階段總課程時數 90% 以上。</li>
+          <li>測驗成績達 80 分以上。</li>
+          <li><b style="color:var(--red)">達成以上兩項指標，獲得 NT$20,000。</b></li>
+        </ul>
+        <div class="apply-sub" style="margin-top:18px">第二階段（企業專題實作課程）結業標準</div>
+        <ul class="apply-list">
+          <li>實作課程出席時數達該階段總課程時數 90% 以上。</li>
+          <li>交付專題成果報告，並完成專題成果發表，經培訓單位及企業導師聯合評核通過。</li>
+          <li><b style="color:var(--red)">達成以上兩項指標，再領 NT$30,000。</b></li>
+        </ul>
+        <div class="apply-callout">🚀 每人合計最高 NT$50,000 學習獎勵金！</div>
+        <div class="apply-note">
+          <b>備註事項</b>
+          <p>學員須完成上述兩階段培訓並達成所列標準與評核，始為完訓。如中途退訓，須敘明退訓事由，並於培訓終止日前 OO 日提交「培訓終止申請表」；經主辦單位認定屬不可歸責因素者，原則上無須繳回已請領之學習獎勵金，後續得再次申請本計畫；未經認定或非屬不可歸責因素者，則應繳回學習獎勵金，且後續不得再次申請本計畫。</p>
+          <p>學員若為應屆畢業生身分，須於取得畢業證書並達成上述條件後，方能領取本計畫學習獎勵金。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 請假、退訓規定及注意事項 -->
+    <div class="apply-card reveal">
+      <div class="apply-h"><span class="apply-no">03</span><h3>請假、退訓規定及注意事項</h3></div>
+      <div class="apply-b">
+        <div class="apply-sub">請假規定</div>
+        <ul class="apply-list">
+          <li>每日上課須完成簽到及簽退（上午、下午各一次）。</li>
+          <li>上課時間依課程表排定（原則週一至週五）。</li>
+          <li>請假假別含事假、病假；晚到或早退均須提前請假。</li>
+          <li>未達出席時數門檻者，不符合學習獎勵金請領資格。</li>
+        </ul>
+        <div class="apply-sub" style="margin-top:18px">退訓規定</div>
+        <p class="apply-p">學員於訓練期間若發生以下情形，辦訓單位得為退訓處理，學員須繳回已領取之學習獎勵金：</p>
+        <ul class="apply-list">
+          <li>未到課時數超過課程總時數 10%。</li>
+          <li>個人報名及履歷資料填寫不實，情節重大者。</li>
+          <li>未經核准擅自退出、因適應不佳或無法配合課程規劃者。</li>
+          <li>除因不可歸責因素退訓外，其他因素退訓者，後續不得再申請本計畫。</li>
+        </ul>
+        <div class="apply-sub" style="margin-top:18px">注意事項</div>
+        <ul class="apply-list">
+          <li>本計畫補助對象為滿 18 至 35 歲（含）之青年，並具備我國教育部認定之大專校院副學士（含二專、五專）以上學歷、欲進入服務業服務者；身分可為應屆畢業生或待業者。</li>
+          <li>每名學員限參與本計畫 1 次（因不可歸責因素退訓者不在此限），且培訓補助期間不得同時接受其他政府相關人才培訓補助。</li>
+          <li>錄取通知後，培訓單位將依法為學員投保「訓字保」（勞工保險＋勞工職業災害保險），以保障學員受訓期間相關權益；請學員於完成訓練後配合辦理退保作業。</li>
+          <li>為配合講師時間或臨時突發事件，培訓單位保留調整課程日期或更換講師之權利。</li>
+          <li>培訓單位保留修訂課程內容之權利，課程變更恕不另行通知，請以官方網站公告為準。</li>
+          <li>執行本計畫期間，不得採購、使用或導入中國大陸廠牌之資通訊產品或服務。</li>
+          <li>如遇不可抗力因素，培訓單位保留修訂課程日期及取消課程之權利。</li>
+          <li>學員領取之學習獎勵金依中華民國稅法規定辦理。</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -689,7 +799,11 @@
     <div class="foot-grid">
       <div class="org">
         <h4>AI 智慧營運實戰養成班</h4>
-        <p style="line-height:1.85;font-size:13.5px;color:rgba(255,255,255,.6)">國立成功大學　產學創新總中心<br>經濟部商業發展署　服務業 AI 人才培育計畫</p>
+        <p style="line-height:2;font-size:13.5px;color:rgba(255,255,255,.6)">
+          主辦單位：經濟部商業發展署<br>
+          執行單位：商業服務業 AI 人才辦公室<br>
+          培訓單位：國立成功大學 產學創新總中心
+        </p>
       </div>
       <div>
         <h4>聯絡資訊</h4>
@@ -704,8 +818,9 @@
       </div>
     </div>
     <div class="foot-bottom">
-      本頁時程與內容為預計開班資訊，實際開課、報到、錄取與相關規定，以國立成功大學及主辦單位正式公告為準。<br>
-      © 2025 國立成功大學 產學創新總中心 ｜ AI 智慧營運實戰養成班
+      <span style="display:inline-block;border:1px solid var(--muted-2);border-radius:6px;padding:2px 10px;font-size:12px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:12px">廣告</span><br>
+      本頁時程與內容為預計開班資訊，實際開課、報到、錄取與相關規定，以主辦單位及培訓單位正式公告為準。<br>
+      © 2026 經濟部商業發展署 ｜ 商業服務業 AI 人才辦公室 ｜ 國立成功大學 產學創新總中心
     </div>
   </div>
 </footer>
